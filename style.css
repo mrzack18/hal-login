@@ -1,0 +1,70 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(iPad\ Pro\ 12.9_\ -\ 2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section {
+    height: 594px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.myimg {
+    height: 594px;
+    width: 404px;
+    background-image: url(img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: -5px -5px 5px rgb(0, 0, 0, 0.15);
+}
+
+.myform {
+    height: 594px;
+    width: 404px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.15);
+}
+
+.mydiv {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.mybtn {
+    padding: 7px 30px;
+    border-radius: 20px;
+}
+
+label {
+    font-weight: 500;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+    body {
+        background-image: none;
+    }
+    
+    .myform {
+        border: none;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    body {
+        background-image: url(Winter\ iPhone\ Wallpapers\ -\ 28\ Cute\ Winter\ iPhone\ Backgrounds.jpg);
+    }
+    
+    .myform {
+        border: none;
+    }
+  }

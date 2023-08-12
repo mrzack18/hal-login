@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="row mydiv w-100">
+        <section class="row container">
+
+            <!-- IMG -->
+
+            <div class="col-sm-6 myimg me-1 d-none d-lg-block rounded-4">
+            </div>
+
+            <!-- IMG -->
+
+            <!-- FORM -->
+
+            <div class="col-sm-6 myform ms-1 row align-items-center rounded-4">
+                <form class="p-3">
+                    <h3 class="text-center fw-bolder">LOG IN</h3>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="mymail@email.com"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <a href="#" style="margin-left: 220px; text-decoration: none;">forgot password?</a>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <p class="form-check-label" for="exampleCheck1">Remember me</p>
+                    </div>
+                    <div class="row align-items-center">
+                        <span class="col">
+                            <hr>
+                        </span>
+                        <span class="w-auto p-0" style="font-size: 15px; color: gray;">Sign in with</span>
+                        <span class="col">
+                            <hr>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://ln.run/a-IYg"><img src="Vector.png" alt=""></a>
+                        <a href="https://ln.run/YxuSG" class="m-2"><img src="social.png" alt=""></a>
+                        <a href="https://ln.run/l_cZz"><img src="social (1).png" alt=""></a>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary mybtn fw-semibold" style="font-size: 17px;">LOG
+                            IN</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p style="margin: 0px; font-size: 15px;">Don't have an account?</p>
+                        <a class="fw-semibold" href="register.html" style="text-decoration: none; font-size: 15px;">SIGN
+                            UP</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FORM END -->
+
+        </section>
+    </div>
+</body>
+
+<script>
+
+    function getTag(id) {
+        let tag = document.getElementById(`${id}`).value;
+        return tag
+    }
+
+    function signUp(clicked_id) {
+        alert(clicked_id)
+    }
+
+    function signUp() {
+        // alert('cuy');
+        let username = getTag("username");
+
+
+        fetch('http://localhost:3000/users', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "username": username,
+                "phoneNumber": phoneNumber,
+                "password": password,
+            })
+        }).then(response => response.json())
+            .then(data => {
+                console.log('Response:', data);
+                // Process the response data
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle any errors
+            });
+    }
+</script>
+
+</html>
